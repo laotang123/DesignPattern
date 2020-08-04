@@ -6,9 +6,13 @@
 
   <groupId>LJF</groupId>
   <artifactId>DesignPattern</artifactId>
-  <version>1</version>
+    <packaging>pom</packaging>
+    <version>1</version>
+    <modules>
+        <module>GeekDesignPattern</module>
+    </modules>
 
-  <name>DesignPattern</name>
+    <name>DesignPattern</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
