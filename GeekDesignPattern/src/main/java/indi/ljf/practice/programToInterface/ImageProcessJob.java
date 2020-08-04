@@ -1,4 +1,4 @@
-package com.ljf.geek.programToInterface;
+package indi.ljf.practice.programToInterface;
 
 /**
  * @author ：ljf
