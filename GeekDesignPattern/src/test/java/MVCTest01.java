@@ -1,6 +1,8 @@
 import indi.ljf.mvc.adm.controller.UserController;
 import indi.ljf.mvc.adm.controller.UserVo;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @author ：ljf
@@ -10,10 +12,11 @@ import org.junit.Test;
  * @version: $ 1.0
  */
 public class MVCTest01 {
-
+    ApplicationContext context = new ClassPathXmlApplicationContext("adm.xml");
     @Test
     public void test01(){
-        UserController controller = new UserController();
+//        UserController controller = new UserController();
+        UserController controller = context.getBean(UserController.class);
         UserVo userVo = controller.getUserById(1);
         System.out.println(userVo);
     }

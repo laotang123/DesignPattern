@@ -2,6 +2,8 @@ package indi.ljf.mvc.adm.service;
 
 import indi.ljf.mvc.adm.repository.UserEntity;
 import indi.ljf.mvc.adm.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @author ：ljf
@@ -10,11 +12,13 @@ import indi.ljf.mvc.adm.repository.UserRepository;
  * @modified By：
  * @version: $ 1.0
  */
+@Service
 public class UserService {
+    @Autowired
     private UserRepository repository;//TODO: 使用IOC容器注入
 
     public UserService() {
-        repository = new UserRepository();
+
     }
 
     public UserBo getUserById(long userId) {

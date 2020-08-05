@@ -1,5 +1,7 @@
 package indi.ljf.mvc.adm.repository;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.HashMap;
 
 /**
@@ -9,6 +11,7 @@ import java.util.HashMap;
  * @modified By：
  * @version: $ 1.0
  */
+@Repository
 public class UserRepository {
     private HashMap<Long, UserEntity> id2user = new HashMap<>();
 

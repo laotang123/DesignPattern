@@ -1,6 +1,7 @@
 package indi.ljf.mvc.adm.service;
 
 import indi.ljf.mvc.adm.controller.UserVo;
+import org.springframework.stereotype.Service;
 
 /**
  * @author ：ljf
@@ -9,11 +10,13 @@ import indi.ljf.mvc.adm.controller.UserVo;
  * @modified By：
  * @version: $ 1.0
  */
+@Service
 public class UserBo {
     private long userId;
     private String name;
     private String cellPhone;
 
+    public UserBo(){}
 
     public long getUserId() {
         return userId;
