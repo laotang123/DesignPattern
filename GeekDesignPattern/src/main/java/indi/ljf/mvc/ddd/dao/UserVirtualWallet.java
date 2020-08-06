@@ -16,6 +16,9 @@ class UserVirtualWallet extends VirtualWallet{
 
     public UserVirtualWallet(){}
 
+    public UserVirtualWallet(BigInteger walletId){
+        this.walletId = walletId;
+    }
     public UserVirtualWallet(String userName,BigInteger walletId){
         this.userName = userName;
         this.walletId = walletId;

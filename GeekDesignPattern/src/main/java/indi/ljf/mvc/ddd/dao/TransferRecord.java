@@ -12,17 +12,57 @@ import java.util.Date;
  * @version: 1.0
  */
 public class TransferRecord {
+    /**
+     * 转账id
+     */
     private BigInteger transferId;
+
+    /**
+     * 转账时间记录，默认是new 该对象的时间
+     * 也可以接受new 对象输入
+     */
     private Date transferTime;
+
+    /**
+     * 转账金额
+     */
     private BigDecimal transferAmount;
+
+    /**
+     * 转账类型，可接收参数为，transfer，withdraw，recharge
+     */
     private String transferType;
+
+    /**
+     * 出账账户
+     */
     private Integer transferFrom;
+
+    /**
+     * 入账账户
+     */
     private Integer transferTo;
 
-    public TransferRecord(){}
+    public TransferRecord() {
+    }
 
-    public TransferRecord(BigInteger transferId){
+    public TransferRecord(BigInteger transferId, BigDecimal transferAmount, String transferType, Integer transferFrom, Integer transferTo) {
         this.transferTime = new Date();
+        this.transferId = transferId;
+        this.transferAmount = transferAmount;
+        this.transferType = transferType;
+        this.transferFrom = transferFrom;
+        this.transferTo = transferTo;
+    }
+
+
+    public TransferRecord(BigInteger transferId, Date transferTime, BigDecimal transferAmount, String transferType, Integer transferFrom, Integer transferTo) {
+        this.transferTime = transferTime;
+        this.transferId = transferId;
+        this.transferAmount = transferAmount;
+        this.transferType = transferType;
+        this.transferFrom = transferFrom;
+        this.transferTo = transferTo;
     }
 
     public BigInteger getTransferId() {
