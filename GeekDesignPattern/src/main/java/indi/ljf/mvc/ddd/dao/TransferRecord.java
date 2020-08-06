@@ -1,5 +1,7 @@
 package indi.ljf.mvc.ddd.dao;
 
+import org.springframework.stereotype.Repository;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
@@ -11,6 +13,7 @@ import java.util.Date;
  * @modified By：
  * @version: 1.0
  */
+@Repository
 public class TransferRecord {
     /**
      * 转账id
@@ -36,17 +39,17 @@ public class TransferRecord {
     /**
      * 出账账户
      */
-    private Integer transferFrom;
+    private BigInteger transferFrom;
 
     /**
      * 入账账户
      */
-    private Integer transferTo;
+    private BigInteger transferTo;
 
     public TransferRecord() {
     }
 
-    public TransferRecord(BigInteger transferId, BigDecimal transferAmount, String transferType, Integer transferFrom, Integer transferTo) {
+    public TransferRecord(BigInteger transferId, BigDecimal transferAmount, String transferType, BigInteger transferFrom, BigInteger transferTo) {
         this.transferTime = new Date();
         this.transferId = transferId;
         this.transferAmount = transferAmount;
@@ -56,7 +59,7 @@ public class TransferRecord {
     }
 
 
-    public TransferRecord(BigInteger transferId, Date transferTime, BigDecimal transferAmount, String transferType, Integer transferFrom, Integer transferTo) {
+    public TransferRecord(BigInteger transferId, Date transferTime, BigDecimal transferAmount, String transferType, BigInteger transferFrom, BigInteger transferTo) {
         this.transferTime = transferTime;
         this.transferId = transferId;
         this.transferAmount = transferAmount;
@@ -97,19 +100,19 @@ public class TransferRecord {
         this.transferType = transferType;
     }
 
-    public Integer getTransferFrom() {
+    public BigInteger getTransferFrom() {
         return transferFrom;
     }
 
-    public void setTransferFrom(Integer transferFrom) {
+    public void setTransferFrom(BigInteger transferFrom) {
         this.transferFrom = transferFrom;
     }
 
-    public Integer getTransferTo() {
+    public BigInteger getTransferTo() {
         return transferTo;
     }
 
-    public void setTransferTo(Integer transferTo) {
+    public void setTransferTo(BigInteger transferTo) {
         this.transferTo = transferTo;
     }
 

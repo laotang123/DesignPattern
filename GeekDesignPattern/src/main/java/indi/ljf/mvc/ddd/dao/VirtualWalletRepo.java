@@ -2,6 +2,7 @@ package indi.ljf.mvc.ddd.dao;
 
 import indi.ljf.mvc.ddd.exception.KeyNonExistedException;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 
@@ -16,4 +17,6 @@ public abstract class VirtualWalletRepo {
     public abstract VirtualWallet getVirtualWallet(BigInteger walletId) throws KeyNonExistedException;
 
     public abstract void putVirtualWallet(BigInteger walletId,VirtualWallet wallet);
+
+    public abstract void updateBalance(BigInteger walletId, BigDecimal balance);
 }

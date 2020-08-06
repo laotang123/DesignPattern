@@ -4,6 +4,7 @@ import indi.ljf.mvc.ddd.exception.KeyNonExistedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 
@@ -17,7 +18,7 @@ import java.util.HashMap;
 @Repository
 public class UserVirtualWalletRepo extends VirtualWalletRepo {
     @Autowired
-    private HashMap<BigInteger,VirtualWallet> map;
+    private static HashMap<BigInteger,VirtualWallet> map;
 
     public UserVirtualWalletRepo(){
     }
@@ -34,6 +35,14 @@ public class UserVirtualWalletRepo extends VirtualWalletRepo {
 
     @Override
     public void putVirtualWallet(BigInteger walletId, VirtualWallet wallet) {
-        map.put(walletId,wallet);
+        if(!map.containsKey(walletId)){
+            map.put(walletId,wallet);
+        }
+    }
+
+    @Override
+    public void updateBalance(BigInteger walletId, BigDecimal amount){
+        VirtualWallet wallet = map.get(walletId);
+        wallet.setBalance(amount);
     }
 }

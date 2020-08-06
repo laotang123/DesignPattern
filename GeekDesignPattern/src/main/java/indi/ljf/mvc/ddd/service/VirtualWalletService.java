@@ -4,6 +4,7 @@ import indi.ljf.mvc.ddd.dao.TransferRecord;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.List;
 
 /**
  * @author ：ljf
@@ -25,7 +26,7 @@ public abstract class VirtualWalletService {
      * @param walletId
      * @return
      */
-    public abstract TransferRecord getTransferRecord(BigInteger walletId);
+    public abstract List<TransferRecord> getTransferRecord(BigInteger walletId);
     /**
      * 取现业务
      * @param walletId：取钱的账户
@@ -41,7 +42,7 @@ public abstract class VirtualWalletService {
     public abstract void recharge(BigInteger walletId,BigDecimal amount);
 
     /**
-     * 转账业务
+     * 转账业务 TODO: 根据id判断获取对应的服务
      * @param fromWalletId：转出钱包id
      * @param toWalletId：转入钱包id
      * @param amount：转账金额
