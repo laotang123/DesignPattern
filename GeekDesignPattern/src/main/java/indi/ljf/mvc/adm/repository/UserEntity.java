@@ -1,6 +1,7 @@
 package indi.ljf.mvc.adm.repository;
 
 import indi.ljf.mvc.adm.service.UserBo;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author ：ljf
@@ -9,11 +10,13 @@ import indi.ljf.mvc.adm.service.UserBo;
  * @modified By：
  * @version: $ 1.0
  */
+@Repository
 public class UserEntity {
     private long id;
     private String name;
     private String cellPhone;
 
+    public UserEntity(){}
 
     public long getId() {
         return id;
