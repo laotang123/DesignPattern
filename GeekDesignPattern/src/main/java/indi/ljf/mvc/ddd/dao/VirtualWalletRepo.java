@@ -1,6 +1,7 @@
 package indi.ljf.mvc.ddd.dao;
 
 import indi.ljf.mvc.ddd.exception.KeyNonExistedException;
+import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -13,6 +14,7 @@ import java.util.HashMap;
  * @modified By：
  * @version: $ 1.0
  */
+@Repository
 public abstract class VirtualWalletRepo {
     public abstract VirtualWallet getVirtualWallet(BigInteger walletId) throws KeyNonExistedException;
 

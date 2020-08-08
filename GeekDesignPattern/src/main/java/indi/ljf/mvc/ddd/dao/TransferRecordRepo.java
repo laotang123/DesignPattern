@@ -18,15 +18,14 @@ import java.util.List;
 @Repository
 public class TransferRecordRepo {
 
-    @Autowired
-    private HashMap<BigInteger, List<TransferRecord>> map;
+    private static HashMap<BigInteger, List<TransferRecord>> map = new HashMap<>();
 
-    public List<TransferRecord> getTransferRecords(BigInteger walletId){
+    public static List<TransferRecord> getTransferRecords(BigInteger walletId){
         List<TransferRecord> records = map.getOrDefault(walletId, new ArrayList<>());
         return records;
     }
 
-    public void putTransferRecord(BigInteger walletId,TransferRecord record){
+    public static void putTransferRecord(BigInteger walletId,TransferRecord record){
         List<TransferRecord> records = map.getOrDefault(walletId, new ArrayList<>());
         records.add(record);
         if(records.size() == 1){

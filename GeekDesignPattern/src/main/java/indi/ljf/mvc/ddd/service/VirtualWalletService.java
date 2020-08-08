@@ -1,6 +1,7 @@
 package indi.ljf.mvc.ddd.service;
 
 import indi.ljf.mvc.ddd.dao.TransferRecord;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -13,6 +14,7 @@ import java.util.List;
  * @modified By：
  * @version: $ 1.0
  */
+@Service
 public abstract class VirtualWalletService {
     /**
      * 获取指定钱包id的钱包金额

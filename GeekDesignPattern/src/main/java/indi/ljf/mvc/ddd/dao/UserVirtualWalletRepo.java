@@ -17,8 +17,7 @@ import java.util.HashMap;
  */
 @Repository
 public class UserVirtualWalletRepo extends VirtualWalletRepo {
-    @Autowired
-    private static HashMap<BigInteger,VirtualWallet> map;
+    private static HashMap<BigInteger,VirtualWallet> map = new HashMap<>();
 
     public UserVirtualWalletRepo(){
     }

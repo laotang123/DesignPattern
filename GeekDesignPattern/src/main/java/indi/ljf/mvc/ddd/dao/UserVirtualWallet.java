@@ -1,5 +1,7 @@
 package indi.ljf.mvc.ddd.dao;
 
+import org.springframework.stereotype.Repository;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
@@ -10,18 +12,21 @@ import java.math.BigInteger;
  * @modified By：
  * @version: 1.0
  */
-class UserVirtualWallet extends VirtualWallet{
+@Repository
+public class UserVirtualWallet extends VirtualWallet{
     private String userName;
-
 
     public UserVirtualWallet(){}
 
     public UserVirtualWallet(BigInteger walletId){
         this.walletId = walletId;
+        this.userName = "";
+        this.balance = BigDecimal.ZERO;
     }
     public UserVirtualWallet(String userName,BigInteger walletId){
         this.userName = userName;
         this.walletId = walletId;
+        this.balance = BigDecimal.ZERO;
     }
     public String getUserName() {
         return userName;
@@ -32,8 +37,18 @@ class UserVirtualWallet extends VirtualWallet{
     }
 
     @Override
-    public void setBalance(BigDecimal balance){
+    protected void setBalance(BigDecimal balance){
         this.balance = balance;
+    }
+
+    @Override
+    public void recharge(BigInteger walletId, BigDecimal amount) {
+        setBalance(this.balance.add(amount));
+    }
+
+    @Override
+    public void withdraw(BigInteger walletId, BigDecimal amount) {
+        setBalance(this.balance.subtract(amount));
     }
 
     public void setWalletId(BigInteger walletId){

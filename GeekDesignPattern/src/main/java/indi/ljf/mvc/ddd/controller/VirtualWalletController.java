@@ -1,6 +1,13 @@
 package indi.ljf.mvc.ddd.controller;
 
+import indi.ljf.mvc.ddd.dao.TransferRecord;
+import indi.ljf.mvc.ddd.service.UserVirtualWalletService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.List;
 
 /**
  * @author ：ljf
@@ -11,5 +18,29 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class VirtualWalletController {
+    @Autowired
+    private UserVirtualWalletService userVirtualWalletService;
 
+    public BigDecimal getBalance(BigInteger walletId){
+        return userVirtualWalletService.getBalance(walletId);
+    }
+
+    public List<TransferRecord> getTransferRecord(BigInteger walletId){
+        return userVirtualWalletService.getTransferRecord(walletId);
+    }
+
+    public void withdraw(BigInteger walletId, BigDecimal amount){
+        userVirtualWalletService.withdraw(walletId,amount);
+    }
+
+    public void recharge(BigInteger walletId, BigDecimal amount){
+        userVirtualWalletService.recharge(walletId,amount);
+    }
+
+    public void addUser(BigInteger walletId){
+        userVirtualWalletService.addUser(walletId);
+    }
+    public void transfer(BigInteger fromWalletId, BigInteger toWalletId, BigDecimal amount){
+        userVirtualWalletService.transfer(fromWalletId,toWalletId,amount);
+    }
 }

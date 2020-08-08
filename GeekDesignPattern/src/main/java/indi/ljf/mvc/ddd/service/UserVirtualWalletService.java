@@ -1,9 +1,6 @@
 package indi.ljf.mvc.ddd.service;
 
-import indi.ljf.mvc.ddd.dao.TransferRecord;
-import indi.ljf.mvc.ddd.dao.TransferRecordRepo;
-import indi.ljf.mvc.ddd.dao.UserVirtualWalletRepo;
-import indi.ljf.mvc.ddd.dao.VirtualWallet;
+import indi.ljf.mvc.ddd.dao.*;
 import indi.ljf.mvc.ddd.exception.KeyNonExistedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +9,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author ：ljf
@@ -25,7 +21,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class UserVirtualWalletService extends VirtualWalletService {
     @Autowired
     private UserVirtualWalletRepo userVirtualWalletRepo;
-    @Autowired
     private TransferRecordRepo transferRecordRepo;
 
     private BigInteger transferId = BigInteger.valueOf(0);
@@ -57,8 +52,7 @@ public class UserVirtualWalletService extends VirtualWalletService {
         } catch (KeyNonExistedException e) {
             e.printStackTrace();
         }
-        BigDecimal balance = wallet.getBalance();
-        wallet.setBalance(balance.add(amount));
+        wallet.withdraw(walletId,amount);
 
         TransferRecord record = new TransferRecord();
         record.setTransferType("withdraw");
@@ -80,8 +74,7 @@ public class UserVirtualWalletService extends VirtualWalletService {
         } catch (KeyNonExistedException e) {
             e.printStackTrace();
         }
-        BigDecimal balance = wallet.getBalance();
-        wallet.setBalance(balance.add(amount));
+        wallet.recharge(walletId,amount);
 
         TransferRecord record = new TransferRecord();
         record.setTransferType("recharge");
@@ -123,7 +116,8 @@ public class UserVirtualWalletService extends VirtualWalletService {
         transferRecordRepo.putTransferRecord(toWalletId,record);
     }
 
-    public static void main(String[] args) {
-
+    public void addUser(BigInteger walletId){
+        userVirtualWalletRepo.putVirtualWallet(walletId,new UserVirtualWallet(walletId));
     }
+
 }

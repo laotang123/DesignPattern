@@ -1,5 +1,8 @@
 package indi.ljf.mvc.ddd.dao;
 
+import com.sun.xml.internal.messaging.saaj.soap.ver1_2.BodyElement1_2Impl;
+import org.springframework.stereotype.Repository;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
@@ -10,6 +13,7 @@ import java.math.BigInteger;
  * @modified By：
  * @version: 1.0
  */
+@Repository
 abstract public class VirtualWallet {
     protected BigDecimal balance;
     protected BigInteger walletId;
@@ -17,6 +21,10 @@ abstract public class VirtualWallet {
     public abstract BigDecimal getBalance();
     public abstract BigInteger getWalletId();
 
-    public abstract void setBalance(BigDecimal balance);
+    protected abstract void setBalance(BigDecimal balance);
+
+    public abstract void recharge(BigInteger walletId,BigDecimal amount);
+
+    public abstract void withdraw(BigInteger walletId, BigDecimal amount);
 
 }
