@@ -1,5 +1,7 @@
 package indi.ljf.pattern.prototype;
 
+import java.io.Serializable;
+
 /**
  * @author ：ljf
  * @date ：2020/7/23 14:45
@@ -7,10 +9,19 @@ package indi.ljf.pattern.prototype;
  * @modified By：
  * @version: $ 1.0
  */
-public class Student implements Cloneable {
+public class Student implements Cloneable, Serializable {
     private int id;
     private String name;
     private int age;
+
+    public Student() {
+    }
+
+    public Student(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
 
     @Override
     public Object clone() {
