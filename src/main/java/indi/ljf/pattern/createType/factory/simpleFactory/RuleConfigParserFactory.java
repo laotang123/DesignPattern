@@ -1,4 +1,4 @@
-package indi.ljf.pattern.factory.simpleFactory;
+package indi.ljf.pattern.createType.factory.simpleFactory;
 
 import java.util.HashMap;
 import java.util.Map;

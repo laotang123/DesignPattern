@@ -5,7 +5,7 @@
  * @LastEditTime: 2020-06-24 20:06:49
  * @FilePath: \DesignPattern\src\main\java\com\ljf\pattern\singleton\EnumSingleton.java
  */ 
-package indi.ljf.pattern.singleton;
+package indi.ljf.pattern.createType.singleton;
 
 //枚举类实现单例模式，防止反序列化
 public enum EnumSingleton{

@@ -1,4 +1,4 @@
-package indi.ljf.pattern.builder;
+package indi.ljf.pattern.createType.builder;
 
 import org.apache.commons.lang3.StringUtils;
 

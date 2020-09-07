@@ -1,4 +1,4 @@
-package indi.ljf.pattern.factory;
+package indi.ljf.pattern.createType.factory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,9 +25,9 @@ public class ReflectFactoryPattern {
     }
 
     public static void main(String[] args) {
-        ReflectFactoryPattern.registerVehicle("indi.ljf.pattern.factory.Car",Car.class);
+        ReflectFactoryPattern.registerVehicle("indi.ljf.pattern.createType.factory.Car",Car.class);
         try {
-            ReflectFactoryPattern.createVehicle("indi.ljf.pattern.factory.Car").running();
+            ReflectFactoryPattern.createVehicle("indi.ljf.pattern.createType.factory.Car").running();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {

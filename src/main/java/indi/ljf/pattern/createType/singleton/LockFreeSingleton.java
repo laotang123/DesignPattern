@@ -1,4 +1,4 @@
-package indi.ljf.pattern.singleton;
+package indi.ljf.pattern.createType.singleton;
 
 /**
  * @author ：ljf

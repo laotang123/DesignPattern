@@ -1,4 +1,4 @@
-package indi.ljf.pattern.factory;
+package indi.ljf.pattern.createType.factory;
 
 import java.util.HashMap;
 
@@ -21,7 +21,7 @@ public class newInstanceFactoryPattern {
     }
 
     public static void main(String[] args) {
-        newInstanceFactoryPattern.registerVehicle("indi.ljf.pattern.factory.Car",new Car());
-        newInstanceFactoryPattern.createVehicle("indi.ljf.pattern.factory.Car").running();
+        newInstanceFactoryPattern.registerVehicle("indi.ljf.pattern.createType.factory.Car",new Car());
+        newInstanceFactoryPattern.createVehicle("indi.ljf.pattern.createType.factory.Car").running();
     }
 }

@@ -1,4 +1,4 @@
-package indi.ljf.pattern.builder;
+package indi.ljf.pattern.createType.builder;
 
 /**
  * @author ：ljf

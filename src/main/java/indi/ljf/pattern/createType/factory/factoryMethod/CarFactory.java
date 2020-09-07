@@ -1,4 +1,4 @@
-package indi.ljf.pattern.factory.factoryMethod;
+package indi.ljf.pattern.createType.factory.factoryMethod;
 
 /**
  * @author ：ljf

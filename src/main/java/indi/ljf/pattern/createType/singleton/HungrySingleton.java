@@ -8,7 +8,7 @@
  * 优势：类加载时进行初始化，实现简单
  * 劣势：不用时也会被加载，线程不安全
  */
-package indi.ljf.pattern.singleton;
+package indi.ljf.pattern.createType.singleton;
 
 public class HungrySingleton {
     private static final HungrySingleton instance = new HungrySingleton();

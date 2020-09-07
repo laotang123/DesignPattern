@@ -6,7 +6,7 @@
  * @FilePath: \DesignPattern\src\main\java\com\ljf\pattern\singleton\InnerClassSingleton.java
  * 内部类实现单例模式; JVM保证单例，加载外部类时不会加载内部类，实现懒加载
  */
-package indi.ljf.pattern.singleton;
+package indi.ljf.pattern.createType.singleton;
 
 public class InnerClassSingleton {
     private InnerClassSingleton() {

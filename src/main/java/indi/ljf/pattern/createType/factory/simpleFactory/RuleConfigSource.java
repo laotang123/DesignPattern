@@ -1,8 +1,6 @@
-package indi.ljf.pattern.factory.simpleFactory;
+package indi.ljf.pattern.createType.factory.simpleFactory;
 
 import indi.ljf.pattern.exceptions.InvalidRuleConfigException;
-
-import java.util.Arrays;
 
 /**
  * @author ：ljf
