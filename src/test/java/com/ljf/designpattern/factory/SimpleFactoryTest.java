@@ -1,8 +1,8 @@
 package com.ljf.designpattern.factory;
 
 import indi.ljf.pattern.exceptions.InvalidRuleConfigException;
-import indi.ljf.pattern.factory.simpleFactory.RuleConfig;
-import indi.ljf.pattern.factory.simpleFactory.RuleConfigSource;
+import indi.ljf.pattern.createType.factory.simpleFactory.RuleConfig;
+import indi.ljf.pattern.createType.factory.simpleFactory.RuleConfigSource;
 import org.junit.Test;
 
 /**
